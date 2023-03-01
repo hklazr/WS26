@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> GAMES Directory </h1>
+    <hr>
+    <div>
+        <a data-th-href="@{/(offset=${next})}">
+            <h4>Next <span data-th-text="${next}"></span></h4>
+        </a>
+    </div>
+    <table data-th-each="g: ${game}">
+        <a data-th-href="@{/game/{gid}(gid=${g.gameId})}">
+            <span data-th-text="${g.name}"></span>
+        </a>
+    </table>
+</body>
+</html>
